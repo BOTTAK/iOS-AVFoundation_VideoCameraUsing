@@ -10,9 +10,28 @@
 		1192C4DD2373F89B00072DD1 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1192C4DC2373F89B00072DD1 /* AppDelegate.swift */; };
 		1192C4DF2373F89B00072DD1 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1192C4DE2373F89B00072DD1 /* SceneDelegate.swift */; };
 		1192C4E12373F89B00072DD1 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1192C4E02373F89B00072DD1 /* ViewController.swift */; };
-		1192C4E42373F89B00072DD1 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1192C4E22373F89B00072DD1 /* Main.storyboard */; };
-		1192C4E62373F89F00072DD1 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1192C4E52373F89F00072DD1 /* Assets.xcassets */; };
 		1192C4E92373F89F00072DD1 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1192C4E72373F89F00072DD1 /* LaunchScreen.storyboard */; };
+		1192C4F12373F91100072DD1 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1192C4F02373F91100072DD1 /* Main.storyboard */; };
+		1192C4F82373F96A00072DD1 /* VideoMerger.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1192C4F52373F96A00072DD1 /* VideoMerger.swift */; };
+		1192C4F92373F96A00072DD1 /* VideoExporter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1192C4F62373F96A00072DD1 /* VideoExporter.swift */; };
+		1192C4FA2373F96A00072DD1 /* AssetHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1192C4F72373F96A00072DD1 /* AssetHandler.swift */; };
+		1192C5092373F97D00072DD1 /* SettingsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1192C4FD2373F97D00072DD1 /* SettingsTableViewCell.swift */; };
+		1192C50A2373F97D00072DD1 /* GalleryCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1192C4FE2373F97D00072DD1 /* GalleryCollectionViewCell.swift */; };
+		1192C50B2373F97D00072DD1 /* GalleryCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1192C4FF2373F97D00072DD1 /* GalleryCollectionViewCell.xib */; };
+		1192C50C2373F97D00072DD1 /* ListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1192C5012373F97D00072DD1 /* ListViewController.swift */; };
+		1192C50D2373F97D00072DD1 /* PlayerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1192C5022373F97D00072DD1 /* PlayerViewController.swift */; };
+		1192C50E2373F97D00072DD1 /* ImageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1192C5032373F97D00072DD1 /* ImageViewController.swift */; };
+		1192C50F2373F97D00072DD1 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1192C5042373F97D00072DD1 /* HomeViewController.swift */; };
+		1192C5102373F97D00072DD1 /* CameraViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1192C5052373F97D00072DD1 /* CameraViewController.swift */; };
+		1192C5112373F97D00072DD1 /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1192C5062373F97D00072DD1 /* SettingsViewController.swift */; };
+		1192C5122373F97D00072DD1 /* GalleryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1192C5082373F97D00072DD1 /* GalleryView.swift */; };
+		1192C5172373F9B000072DD1 /* CameraFileManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1192C5142373F9B000072DD1 /* CameraFileManager.swift */; };
+		1192C5182373F9B000072DD1 /* PermissionsManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1192C5152373F9B000072DD1 /* PermissionsManager.swift */; };
+		1192C5192373F9B000072DD1 /* CameraManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1192C5162373F9B000072DD1 /* CameraManager.swift */; };
+		1192C51D2373F9B900072DD1 /* PhotoLibraryManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1192C51B2373F9B900072DD1 /* PhotoLibraryManager.swift */; };
+		1192C51E2373F9B900072DD1 /* UserDefaultsHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1192C51C2373F9B900072DD1 /* UserDefaultsHandler.swift */; };
+		1192C5202373F9EA00072DD1 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1192C51F2373F9EA00072DD1 /* Assets.xcassets */; };
+		1192C52223756DF400072DD1 /* OneCameraViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1192C52123756DF400072DD1 /* OneCameraViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -20,10 +39,29 @@
 		1192C4DC2373F89B00072DD1 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		1192C4DE2373F89B00072DD1 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		1192C4E02373F89B00072DD1 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		1192C4E32373F89B00072DD1 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		1192C4E52373F89F00072DD1 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		1192C4E82373F89F00072DD1 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		1192C4EA2373F89F00072DD1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		1192C4F02373F91100072DD1 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
+		1192C4F52373F96A00072DD1 /* VideoMerger.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VideoMerger.swift; sourceTree = "<group>"; };
+		1192C4F62373F96A00072DD1 /* VideoExporter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VideoExporter.swift; sourceTree = "<group>"; };
+		1192C4F72373F96A00072DD1 /* AssetHandler.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AssetHandler.swift; sourceTree = "<group>"; };
+		1192C4FD2373F97D00072DD1 /* SettingsTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsTableViewCell.swift; sourceTree = "<group>"; };
+		1192C4FE2373F97D00072DD1 /* GalleryCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GalleryCollectionViewCell.swift; sourceTree = "<group>"; };
+		1192C4FF2373F97D00072DD1 /* GalleryCollectionViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = GalleryCollectionViewCell.xib; sourceTree = "<group>"; };
+		1192C5012373F97D00072DD1 /* ListViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ListViewController.swift; sourceTree = "<group>"; };
+		1192C5022373F97D00072DD1 /* PlayerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlayerViewController.swift; sourceTree = "<group>"; };
+		1192C5032373F97D00072DD1 /* ImageViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImageViewController.swift; sourceTree = "<group>"; };
+		1192C5042373F97D00072DD1 /* HomeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
+		1192C5052373F97D00072DD1 /* CameraViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CameraViewController.swift; sourceTree = "<group>"; };
+		1192C5062373F97D00072DD1 /* SettingsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
+		1192C5082373F97D00072DD1 /* GalleryView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GalleryView.swift; sourceTree = "<group>"; };
+		1192C5142373F9B000072DD1 /* CameraFileManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CameraFileManager.swift; sourceTree = "<group>"; };
+		1192C5152373F9B000072DD1 /* PermissionsManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PermissionsManager.swift; sourceTree = "<group>"; };
+		1192C5162373F9B000072DD1 /* CameraManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CameraManager.swift; sourceTree = "<group>"; };
+		1192C51B2373F9B900072DD1 /* PhotoLibraryManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PhotoLibraryManager.swift; sourceTree = "<group>"; };
+		1192C51C2373F9B900072DD1 /* UserDefaultsHandler.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserDefaultsHandler.swift; sourceTree = "<group>"; };
+		1192C51F2373F9EA00072DD1 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Assets.xcassets; path = "../../../Project/StackOverFlow/11.2019/CameraManager-master/Assets.xcassets"; sourceTree = "<group>"; };
+		1192C52123756DF400072DD1 /* OneCameraViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OneCameraViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,15 +94,90 @@
 		1192C4DB2373F89B00072DD1 /* CameraTest */ = {
 			isa = PBXGroup;
 			children = (
+				1192C51A2373F9B900072DD1 /* Helper Classes */,
+				1192C5132373F9B000072DD1 /* Manager Classes */,
+				1192C4FB2373F97D00072DD1 /* Views */,
+				1192C4F42373F96A00072DD1 /* Models */,
 				1192C4DC2373F89B00072DD1 /* AppDelegate.swift */,
 				1192C4DE2373F89B00072DD1 /* SceneDelegate.swift */,
+				1192C4F02373F91100072DD1 /* Main.storyboard */,
 				1192C4E02373F89B00072DD1 /* ViewController.swift */,
-				1192C4E22373F89B00072DD1 /* Main.storyboard */,
-				1192C4E52373F89F00072DD1 /* Assets.xcassets */,
+				1192C51F2373F9EA00072DD1 /* Assets.xcassets */,
 				1192C4E72373F89F00072DD1 /* LaunchScreen.storyboard */,
 				1192C4EA2373F89F00072DD1 /* Info.plist */,
 			);
 			path = CameraTest;
+			sourceTree = "<group>";
+		};
+		1192C4F42373F96A00072DD1 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				1192C4F52373F96A00072DD1 /* VideoMerger.swift */,
+				1192C4F62373F96A00072DD1 /* VideoExporter.swift */,
+				1192C4F72373F96A00072DD1 /* AssetHandler.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		1192C4FB2373F97D00072DD1 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				1192C4FC2373F97D00072DD1 /* Cells */,
+				1192C5002373F97D00072DD1 /* ViewControllers */,
+				1192C5072373F97D00072DD1 /* Custom Views */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		1192C4FC2373F97D00072DD1 /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				1192C4FD2373F97D00072DD1 /* SettingsTableViewCell.swift */,
+				1192C4FE2373F97D00072DD1 /* GalleryCollectionViewCell.swift */,
+				1192C4FF2373F97D00072DD1 /* GalleryCollectionViewCell.xib */,
+			);
+			path = Cells;
+			sourceTree = "<group>";
+		};
+		1192C5002373F97D00072DD1 /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				1192C5012373F97D00072DD1 /* ListViewController.swift */,
+				1192C5022373F97D00072DD1 /* PlayerViewController.swift */,
+				1192C5032373F97D00072DD1 /* ImageViewController.swift */,
+				1192C5042373F97D00072DD1 /* HomeViewController.swift */,
+				1192C5052373F97D00072DD1 /* CameraViewController.swift */,
+				1192C5062373F97D00072DD1 /* SettingsViewController.swift */,
+				1192C52123756DF400072DD1 /* OneCameraViewController.swift */,
+			);
+			path = ViewControllers;
+			sourceTree = "<group>";
+		};
+		1192C5072373F97D00072DD1 /* Custom Views */ = {
+			isa = PBXGroup;
+			children = (
+				1192C5082373F97D00072DD1 /* GalleryView.swift */,
+			);
+			path = "Custom Views";
+			sourceTree = "<group>";
+		};
+		1192C5132373F9B000072DD1 /* Manager Classes */ = {
+			isa = PBXGroup;
+			children = (
+				1192C5142373F9B000072DD1 /* CameraFileManager.swift */,
+				1192C5152373F9B000072DD1 /* PermissionsManager.swift */,
+				1192C5162373F9B000072DD1 /* CameraManager.swift */,
+			);
+			path = "Manager Classes";
+			sourceTree = "<group>";
+		};
+		1192C51A2373F9B900072DD1 /* Helper Classes */ = {
+			isa = PBXGroup;
+			children = (
+				1192C51B2373F9B900072DD1 /* PhotoLibraryManager.swift */,
+				1192C51C2373F9B900072DD1 /* UserDefaultsHandler.swift */,
+			);
+			path = "Helper Classes";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -125,9 +238,10 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1192C4F12373F91100072DD1 /* Main.storyboard in Resources */,
+				1192C50B2373F97D00072DD1 /* GalleryCollectionViewCell.xib in Resources */,
 				1192C4E92373F89F00072DD1 /* LaunchScreen.storyboard in Resources */,
-				1192C4E62373F89F00072DD1 /* Assets.xcassets in Resources */,
-				1192C4E42373F89B00072DD1 /* Main.storyboard in Resources */,
+				1192C5202373F9EA00072DD1 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -138,23 +252,33 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1192C4F92373F96A00072DD1 /* VideoExporter.swift in Sources */,
+				1192C50A2373F97D00072DD1 /* GalleryCollectionViewCell.swift in Sources */,
 				1192C4E12373F89B00072DD1 /* ViewController.swift in Sources */,
+				1192C4F82373F96A00072DD1 /* VideoMerger.swift in Sources */,
+				1192C5122373F97D00072DD1 /* GalleryView.swift in Sources */,
+				1192C51D2373F9B900072DD1 /* PhotoLibraryManager.swift in Sources */,
+				1192C5102373F97D00072DD1 /* CameraViewController.swift in Sources */,
+				1192C5172373F9B000072DD1 /* CameraFileManager.swift in Sources */,
 				1192C4DD2373F89B00072DD1 /* AppDelegate.swift in Sources */,
+				1192C50C2373F97D00072DD1 /* ListViewController.swift in Sources */,
+				1192C5092373F97D00072DD1 /* SettingsTableViewCell.swift in Sources */,
 				1192C4DF2373F89B00072DD1 /* SceneDelegate.swift in Sources */,
+				1192C5112373F97D00072DD1 /* SettingsViewController.swift in Sources */,
+				1192C4FA2373F96A00072DD1 /* AssetHandler.swift in Sources */,
+				1192C50E2373F97D00072DD1 /* ImageViewController.swift in Sources */,
+				1192C50D2373F97D00072DD1 /* PlayerViewController.swift in Sources */,
+				1192C52223756DF400072DD1 /* OneCameraViewController.swift in Sources */,
+				1192C5182373F9B000072DD1 /* PermissionsManager.swift in Sources */,
+				1192C51E2373F9B900072DD1 /* UserDefaultsHandler.swift in Sources */,
+				1192C5192373F9B000072DD1 /* CameraManager.swift in Sources */,
+				1192C50F2373F97D00072DD1 /* HomeViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
-		1192C4E22373F89B00072DD1 /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				1192C4E32373F89B00072DD1 /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		1192C4E72373F89F00072DD1 /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -285,7 +409,9 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = ZZH8QX82PA;
 				INFOPLIST_FILE = CameraTest/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -302,7 +428,9 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = ZZH8QX82PA;
 				INFOPLIST_FILE = CameraTest/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
