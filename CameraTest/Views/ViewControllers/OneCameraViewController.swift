@@ -321,6 +321,7 @@ class OneCameraViewController: UIViewController {
     func stopActivityIndicator() {
         activitiIndicator?.stopAnimating()
         activitiIndicator?.removeFromSuperview()
+        
     }
     
     
