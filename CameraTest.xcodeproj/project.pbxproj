@@ -30,8 +30,8 @@
 		1192C5192373F9B000072DD1 /* CameraManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1192C5162373F9B000072DD1 /* CameraManager.swift */; };
 		1192C51D2373F9B900072DD1 /* PhotoLibraryManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1192C51B2373F9B900072DD1 /* PhotoLibraryManager.swift */; };
 		1192C51E2373F9B900072DD1 /* UserDefaultsHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1192C51C2373F9B900072DD1 /* UserDefaultsHandler.swift */; };
-		1192C5202373F9EA00072DD1 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1192C51F2373F9EA00072DD1 /* Assets.xcassets */; };
 		1192C52223756DF400072DD1 /* OneCameraViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1192C52123756DF400072DD1 /* OneCameraViewController.swift */; };
+		FA4E86AA2383C43700223270 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FA4E86A92383C43700223270 /* Assets.xcassets */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -60,8 +60,8 @@
 		1192C5162373F9B000072DD1 /* CameraManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CameraManager.swift; sourceTree = "<group>"; };
 		1192C51B2373F9B900072DD1 /* PhotoLibraryManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PhotoLibraryManager.swift; sourceTree = "<group>"; };
 		1192C51C2373F9B900072DD1 /* UserDefaultsHandler.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserDefaultsHandler.swift; sourceTree = "<group>"; };
-		1192C51F2373F9EA00072DD1 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Assets.xcassets; path = "../../../Project/StackOverFlow/11.2019/CameraManager-master/Assets.xcassets"; sourceTree = "<group>"; };
 		1192C52123756DF400072DD1 /* OneCameraViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OneCameraViewController.swift; sourceTree = "<group>"; };
+		FA4E86A92383C43700223270 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -102,7 +102,7 @@
 				1192C4DE2373F89B00072DD1 /* SceneDelegate.swift */,
 				1192C4F02373F91100072DD1 /* Main.storyboard */,
 				1192C4E02373F89B00072DD1 /* ViewController.swift */,
-				1192C51F2373F9EA00072DD1 /* Assets.xcassets */,
+				FA4E86A92383C43700223270 /* Assets.xcassets */,
 				1192C4E72373F89F00072DD1 /* LaunchScreen.storyboard */,
 				1192C4EA2373F89F00072DD1 /* Info.plist */,
 			);
@@ -241,7 +241,7 @@
 				1192C4F12373F91100072DD1 /* Main.storyboard in Resources */,
 				1192C50B2373F97D00072DD1 /* GalleryCollectionViewCell.xib in Resources */,
 				1192C4E92373F89F00072DD1 /* LaunchScreen.storyboard in Resources */,
-				1192C5202373F9EA00072DD1 /* Assets.xcassets in Resources */,
+				FA4E86AA2383C43700223270 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

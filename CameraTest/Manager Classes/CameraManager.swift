@@ -1077,7 +1077,7 @@ extension OrientationHandling {
         }
     }
     
-    private func startFollowingDeviceOrientation() {
+    func startFollowingDeviceOrientation() {
         if shouldRespondToOrientationChanges && !cameraIsObservingDeviceOrientation {
             coreMotionManager = CMMotionManager()
             coreMotionManager.accelerometerUpdateInterval = 0.005
@@ -1118,14 +1118,14 @@ extension OrientationHandling {
         }
     }
     
-    private func stopFollowingDeviceOrientation() {
+    func stopFollowingDeviceOrientation() {
         if cameraIsObservingDeviceOrientation {
             coreMotionManager.stopAccelerometerUpdates()
             cameraIsObservingDeviceOrientation = false
         }
     }
     
-    private func videoOrientation(forDeviceOrientation deviceOrientation: UIDeviceOrientation) -> AVCaptureVideoOrientation {
+    func videoOrientation(forDeviceOrientation deviceOrientation: UIDeviceOrientation) -> AVCaptureVideoOrientation {
         switch deviceOrientation {
         case .landscapeLeft:
             return .landscapeRight
@@ -1162,7 +1162,7 @@ extension OrientationHandling {
         }
     }
     
-    private func videoOrientationFromStatusBarOrientation() -> AVCaptureVideoOrientation {
+    func videoOrientationFromStatusBarOrientation() -> AVCaptureVideoOrientation {
         
         var orientation: UIInterfaceOrientation?
         
@@ -1191,8 +1191,29 @@ extension OrientationHandling {
         }
     }
     
-    private func currentCaptureVideoOrientation() -> AVCaptureVideoOrientation {
-        if deviceOrientation == .faceDown
+    func customOrientation() {
+        
+        let deviceOrientation = UIDevice.current.orientation
+
+        if deviceOrientation == UIDeviceOrientation.portraitUpsideDown {
+            previewLayer?.connection!.videoOrientation = AVCaptureVideoOrientation.portraitUpsideDown
+            }
+        else if deviceOrientation == UIDeviceOrientation.portraitUpsideDown {
+            previewLayer?.connection!.videoOrientation = AVCaptureVideoOrientation.landscapeLeft
+            previewLayer?.connection!.videoOrientation = AVCaptureVideoOrientation.landscapeRight
+        }
+        else if deviceOrientation == UIDeviceOrientation.landscapeLeft {
+            previewLayer?.connection!.videoOrientation = AVCaptureVideoOrientation.portraitUpsideDown
+        }
+        else if deviceOrientation == UIDeviceOrientation.landscapeRight {
+            previewLayer?.connection?.videoOrientation = AVCaptureVideoOrientation.portraitUpsideDown
+        }
+        
+        }
+    
+    
+    func currentCaptureVideoOrientation() -> AVCaptureVideoOrientation {
+        if deviceOrientation == .faceUp
             || deviceOrientation == .faceUp
             || deviceOrientation == .unknown {
             return currentPreviewVideoOrientation()
@@ -1200,18 +1221,18 @@ extension OrientationHandling {
         return videoOrientation(forDeviceOrientation: deviceOrientation)
     }
     
-    private func currentPreviewDeviceOrientation() -> UIDeviceOrientation {
+    func currentPreviewDeviceOrientation() -> UIDeviceOrientation {
         if shouldKeepViewAtOrientationChanges {
             return .portrait
         }
         return UIDevice.current.orientation
     }
     
-    private func currentPreviewVideoOrientation() -> AVCaptureVideoOrientation {
+    func currentPreviewVideoOrientation() -> AVCaptureVideoOrientation {
         return videoOrientation(forDeviceOrientation: currentPreviewDeviceOrientation())
     }
     
-    private func imageOrientation(forDeviceOrientation deviceOrientation: UIDeviceOrientation, isMirrored: Bool) -> UIImage.Orientation {
+    func imageOrientation(forDeviceOrientation deviceOrientation: UIDeviceOrientation, isMirrored: Bool) -> UIImage.Orientation {
         switch deviceOrientation {
         case .landscapeLeft:
             return cameraPosition == .back ? isMirrored ? .upMirrored : .up : isMirrored ? .downMirrored : .down

@@ -8,6 +8,7 @@
 
 import UIKit
 
+
 class OneCameraViewController: UIViewController {
     
     //MARK: Outltes
@@ -47,6 +48,40 @@ class OneCameraViewController: UIViewController {
     
     @IBOutlet weak var orientationButtob: UIButton!
     
+    @IBOutlet weak var auidoOneButton: UIButton!
+    
+    @IBOutlet weak var audioTwoButton: UIButton!
+    
+    @IBOutlet weak var editorButton: UIButton!
+    
+    @IBOutlet weak var effectOneButton: UIButton!
+    
+    @IBOutlet weak var effectTwoButton: UIButton!
+    
+    @IBOutlet weak var lockOrientationButton: UIButton!
+    
+    @IBOutlet weak var galleryButton: UIButton!
+    
+    @IBOutlet weak var microphoneButton: UIButton!
+    
+    @IBOutlet weak var negaviteOneButton: UIButton!
+    
+    @IBOutlet weak var negativeTwoButton: UIButton!
+    
+    @IBOutlet weak var orientationButton: UIButton!
+    
+    @IBOutlet weak var photoCameraButton: UIButton!
+    
+    @IBOutlet weak var proModeButton: UIButton!
+    
+    @IBOutlet weak var rotateButton: UIButton!
+    
+    @IBOutlet weak var settingButton: UIButton!
+    
+    @IBOutlet weak var videoOneButton: UIButton!
+    
+    @IBOutlet weak var videoTwoButton: UIButton!
+    
     
     
     //MARK: Top Bar Panel Labels
@@ -63,7 +98,6 @@ class OneCameraViewController: UIViewController {
     
     //MARK: Variables
     let cameraManager = CameraManager.sharedInstance
-    
     var galleryView: GalleryView?
     private var activitiIndicator: UIActivityIndicatorView?
     private var captureImage: UIImage?
@@ -73,125 +107,125 @@ class OneCameraViewController: UIViewController {
     
     //MARK: Function
     @IBAction func flashButtonEnabled(_ sender: Any) {
-        let image = UIImage(named: "Vector")
-        let button = UIButton()
-        button.setImage(image, for: .normal)
+        flashButtonEnabled.imageView?.contentMode = .scaleAspectFill
+        flashButtonEnabled.imageEdgeInsets = UIEdgeInsets(top: 19, left: 19, bottom: 19, right: 19)
+        flashButtonEnabled.setImage((UIImage(named: "Vector")), for: .normal)
     }
     
     @IBAction func lockRorationButton(_ sender: Any) {
-        let image = UIImage(named: "")
-        let button = UIButton()
-        button.setImage(image, for: .normal)
+        lockOrientationButton.imageView?.contentMode = .scaleAspectFill
+        lockOrientationButton.imageEdgeInsets = UIEdgeInsets(top: 19, left: 19, bottom: 19, right: 19)
+        lockOrientationButton.setImage(UIImage(named: "Locked"), for: .normal)
     }
     
     @IBAction func galeryButton(_ sender: Any) {
-        let image = UIImage(named: "")
-        let button = UIButton()
-        button.setImage(image, for: .normal)
+        galleryButton.imageView?.contentMode = .scaleAspectFill
+        galleryButton.imageEdgeInsets = UIEdgeInsets(top: 25, left: 25, bottom: 25, right: 25)
+        galleryButton.setImage(UIImage(named: "Gallery"), for: .normal)
     }
     
     @IBAction func editorButton(_ sender: Any) {
-        let image = UIImage(named: "")
-        let button = UIButton()
-        button.setImage(image, for: .normal)
+        editorButton.imageView?.contentMode = .scaleAspectFill
+        editorButton.imageEdgeInsets = UIEdgeInsets(top: 25, left: 25, bottom: 25, right: 25)
+        editorButton.setImage(UIImage(named: "Editor"), for: .normal)
     }
     
     @IBAction func startButton(_ sender: Any) {
-        let image = UIImage(named: "")
-        let button = UIButton()
-        button.setImage(image, for: .normal)
+        startButton.imageView?.contentMode = .scaleAspectFill
+        startButton.imageEdgeInsets = UIEdgeInsets(top: 65, left: 65, bottom: 65, right: 65)
+        startButton.setImage(UIImage(named: "Start"), for: .normal)
     }
     
     @IBAction func stopButton(_ sender: Any) {
-        let image = UIImage(named: "")
-        let button = UIButton()
-        button.setImage(image, for: .normal)
+        stopButton.imageView?.contentMode = .scaleAspectFill
+        stopButton.imageEdgeInsets = UIEdgeInsets(top: 25, left: 25, bottom: 25, right: 25)
+        stopButton.setImage(UIImage(named: "Stop"), for: .normal)
     }
     
     @IBAction func orientationButton(_ sender: Any) {
-        let image = UIImage(named: "")
-        let button = UIButton()
-        button.setImage(image, for: .normal)
+        orientationButton.imageView?.contentMode = .scaleAspectFill
+        orientationButton.imageEdgeInsets = UIEdgeInsets(top: 19, left: 19, bottom: 19, right: 19)
+        orientationButton.setImage(UIImage(named: "Rotate"), for: .normal)
     }
     
     @IBAction func videoOneButton(_ sender: Any) {
-        let image = UIImage(named: "")
-        let button = UIButton()
-        button.setImage(image, for: .normal)
+        videoOneButton.imageView?.contentMode = .scaleAspectFill
+        videoOneButton.imageEdgeInsets = UIEdgeInsets(top: 60, left: 60, bottom: 60, right: 60)
+        videoOneButton.setImage(UIImage(named: "Video"), for: .normal)
     }
     
     @IBAction func audioOneButton(_ sender: Any) {
-        let image = UIImage(named: "")
-        let button = UIButton()
-        button.setImage(image, for: .normal)
+        auidoOneButton.imageView?.contentMode = .scaleAspectFill
+        auidoOneButton.imageEdgeInsets = UIEdgeInsets(top: 60, left: 60, bottom: 60, right: 60)
+        auidoOneButton.setImage(UIImage(named: "Audio"), for: .normal)
     }
     
     @IBAction func effectOneButton(_ sender: Any) {
-        let image = UIImage(named: "")
-        let button = UIButton()
-        button.setImage(image, for: .normal)
+        effectOneButton.imageView?.contentMode = .scaleAspectFill
+        effectOneButton.imageEdgeInsets = UIEdgeInsets(top: 60, left: 60, bottom: 60, right: 60)
+        effectOneButton.setImage(UIImage(named: "Effect"), for: .normal)
     }
     
     @IBAction func negativOneButton(_ sender: Any) {
-        let image = UIImage(named: "")
-        let button = UIButton()
-        button.setImage(image, for: .normal)
+        negaviteOneButton.imageView?.contentMode = .scaleAspectFill
+        negaviteOneButton.imageEdgeInsets = UIEdgeInsets(top: 60, left: 60, bottom: 60, right: 60)
+        negaviteOneButton.setImage(UIImage(named: "Negativ"), for: .normal)
     }
     
     @IBAction func videoTwoButton(_ sender: Any) {
-        let image = UIImage(named: "")
-        let button = UIButton()
-        button.setImage(image, for: .normal)
+        videoTwoButton.imageView?.contentMode = .scaleAspectFill
+        videoTwoButton.imageEdgeInsets = UIEdgeInsets(top: 60, left: 60, bottom: 60, right: 60)
+        videoTwoButton.setImage(UIImage(named: "Video"), for: .normal)
     }
     
     @IBAction func audioTwoButton(_ sender: Any) {
-        let image = UIImage(named: "")
-        let button = UIButton()
-        button.setImage(image, for: .normal)
+        audioTwoButton.imageView?.contentMode = .scaleAspectFill
+        audioTwoButton.imageEdgeInsets = UIEdgeInsets(top: 60, left: 60, bottom: 60, right: 60)
+        audioTwoButton.setImage(UIImage(named: "Audio"), for: .normal)
     }
     
     @IBAction func effectTwoButton(_ sender: Any) {
-        let image = UIImage(named: "")
-        let button = UIButton()
-        button.setImage(image, for: .normal)
+        effectTwoButton.imageView?.contentMode = .scaleAspectFill
+        effectTwoButton.imageEdgeInsets = UIEdgeInsets(top: 60, left: 60, bottom: 60, right: 60)
+        effectTwoButton.setImage(UIImage(named: "Effect"), for: .normal)
     }
     
     @IBAction func negativTwoButton(_ sender: Any) {
-        let image = UIImage(named: "")
-        let button = UIButton()
-        button.setImage(image, for: .normal)
+        negativeTwoButton.imageView?.contentMode = .scaleAspectFill
+        negativeTwoButton.imageEdgeInsets = UIEdgeInsets(top: 60, left: 60, bottom: 60, right: 60)
+        negativeTwoButton.setImage(UIImage(named: "Negativ"), for: .normal)
     }
     
     
     //MARK: TopBar Panel Function
     @IBAction func rotateButton(_ sender: Any) {
-        let image = UIImage(named: "")
-        let button = UIButton()
-        button.setImage(image, for: .normal)
+        rotateButton.imageView?.contentMode = .scaleAspectFill
+        rotateButton.imageEdgeInsets = UIEdgeInsets(top: 27, left: 27, bottom: 27, right: 27)
+        rotateButton.setImage(UIImage(named: "RotateMode"), for: .normal)
     }
     
     @IBAction func proModeButton(_ sender: Any) {
-        let image = UIImage(named: "")
-        let button = UIButton()
-        button.setImage(image, for: .normal)
+        proModeButton.imageView?.contentMode = .scaleAspectFill
+        proModeButton.imageEdgeInsets = UIEdgeInsets(top: 27, left: 27, bottom: 27, right: 27)
+        proModeButton.setImage(UIImage(named: "ProMode"), for: .normal)
     }
     
     @IBAction func photoCameraButton(_ sender: Any) {
-        let image = UIImage(named: "")
-        let button = UIButton()
-        button.setImage(image, for: .normal)
+        photoCameraButton.imageView?.contentMode = .scaleAspectFill
+        photoCameraButton.imageEdgeInsets = UIEdgeInsets(top: 27, left: 27, bottom: 27, right: 27)
+        photoCameraButton.setImage(UIImage(named: "Photo"), for: .normal)
     }
     
     @IBAction func microphoneButton(_ sender: Any) {
-        let image = UIImage(named: "")
-        let button = UIButton()
-        button.setImage(image, for: .normal)
+        microphoneButton.imageView?.contentMode = .scaleAspectFill
+        microphoneButton.imageEdgeInsets = UIEdgeInsets(top: 27, left: 27, bottom: 27, right: 27)
+        microphoneButton.setImage(UIImage(named: "Microphone"), for: .normal)
     }
     
     @IBAction func settingsButton(_ sender: Any) {
-        let image = UIImage(named: "")
-        let button = UIButton()
-        button.setImage(image, for: .normal)
+        settingButton.imageView?.contentMode = .scaleAspectFill
+        settingButton.imageEdgeInsets = UIEdgeInsets(top: 27, left: 27, bottom: 27, right: 27)
+        settingButton.setImage(UIImage(named: "Settings"), for: .normal)
     }
     
     private func addVideoPreviewView(mode: CameraOutputMode?) {
@@ -206,9 +240,9 @@ class OneCameraViewController: UIViewController {
     
     private func handleButtonStates() {
         if let flash = cameraManager.hasTorchOrFlash {
-//            flashButtonEnabled.isEnabled = flash
+            flashButtonEnabled.isEnabled = flash
         } else {
-//            flashButtonEnabled.isEnabled = false
+            flashButtonEnabled.isEnabled = false
         }
 //        orientationButtob.isEnabled = cameraManager.hasFrontCamera
 //        orientationButtob.isHidden = !cameraManager.canChangeCameraPosition
@@ -241,16 +275,16 @@ class OneCameraViewController: UIViewController {
     private func updateUIForCameraMode(mode: CameraOutputMode) {
         switch mode {
         case .video:
-//            stopButton.isHidden = false
+            stopButton.isHidden = false
 //            previewImageView.isHidden = true
             stopButton.isEnabled = cameraManager.isRecordingSessionInProgress
         case .stillImage:
-//            stopButton.isHidden = true
-//            timerLabel.isHidden = true
+            stopButton.isHidden = true
+            timerLabel.isHidden = true
             break
         }
-//        startButton.isSelected = false
-//        startButton.isEnabled = true
+        startButton.isSelected = false
+        startButton.isEnabled = true
         
         handleButtonStates()
     }
@@ -262,30 +296,30 @@ class OneCameraViewController: UIViewController {
     }
     
     
-//    private func setFlashImage(state: CameraFlashMode) {
-//        switch state {
-//        case .off:
-//            flashButtonEnabled.setImage(UIImage(named: "icoFlashOff"), for: .normal)
-//        case .on :
-//            flashButtonEnabled.setImage(UIImage(named: "icoFlashOn"), for: .normal)
-//        case .auto:
-//            flashButtonEnabled.setImage(UIImage(named: "icoFlashAuto"), for: .normal)
-//        }
-//    }
+    private func setFlashImage(state: CameraFlashMode) {
+        switch state {
+        case .off:
+            flashButtonEnabled.setImage(UIImage(named: "icoFlashOff"), for: .normal)
+        case .on :
+            flashButtonEnabled.setImage(UIImage(named: "icoFlashOn"), for: .normal)
+        case .auto:
+            flashButtonEnabled.setImage(UIImage(named: "icoFlashAuto"), for: .normal)
+        }
+    }
     
     
     private func setupUI() {
         cameraView?.contentMode = .scaleToFill
-//        startButton.isSelected = false
-//        stopButton.isEnabled = false
+        startButton.isSelected = false
+        stopButton.isEnabled = false
     }
     
     private func positionCameraPreview() {
-        //            previewLayer?.videoGravity = .resizeAspectFill
-        //            previewLayer?.frame = videoCaptureView.bounds
-        //            self.previewLayer?.position = CGPoint(x: self.videoCaptureView.bounds.midX, y: self.videoCaptureView.bounds.midY)
-        //        cameraPreviewView?.previewLayer.videoGravity = .resizeAspectFill
-        //        cameraPreviewView?.frame = videoCaptureView.bounds
+//                    previewLayer?.videoGravity = .resizeAspectFill
+//                    previewLayer?.frame = videoCaptureView.bounds
+//                    self.previewLayer?.position = CGPoint(x: self.videoCaptureView.bounds.midX, y: self.videoCaptureView.bounds.midY)
+//                cameraPreviewView?.previewLayer.videoGravity = .resizeAspectFill
+//                cameraPreviewView?.frame = videoCaptureView.bounds
         
     }
     
@@ -359,7 +393,7 @@ class OneCameraViewController: UIViewController {
             super.viewWillAppear(animated)
             
             timerLabel.isHidden = true
-//            startButton.isEnabled = true
+            startButton.isEnabled = true
             setupUI()
             cameraManager.resumeSession(){
                 DispatchQueue.main.async {
@@ -405,22 +439,24 @@ extension OneCameraViewController: CameraMangerRecordingDelegate, CameraPhotoCap
 
     
     func didStartRecording() {
-//        startButton.isSelected = true
-//        stopButton.isEnabled = true
+        startButton.isSelected = true
+        stopButton.isSelected = true
+        cameraManager.customOrientation()
         handleButtonStates()
     }
     
     func didPauseRecording(withIndividualVideoUrls videoUrls: [URL]) {
         DispatchQueue.main.async {
             self.handleButtonStates()
-//            self.startButton.isSelected = false
+            self.startButton.isSelected = false
+            self.startButton.isSelected = false
         }
     }
     
     func didExportVideo(with outputUrl: URL?,error: Error?) {
         DispatchQueue.main.async {
-//            self.stopButton.isEnabled = false
-//            self.startButton.isSelected = false
+            self.stopButton.isEnabled = false
+            self.startButton.isSelected = false
             self.timerLabel.isHidden = true
             self.handleButtonStates()
             self.stopActivityIndicator()
@@ -449,17 +485,17 @@ extension OneCameraViewController: CameraMangerRecordingDelegate, CameraPhotoCap
         DispatchQueue.main.async { [weak self] in
             guard let `self` = self else { return }
             self.timerLabel.isHidden = true
-//            self.stopButton.isEnabled = false
-//            self.startButton.isSelected = false
+            self.stopButton.isEnabled = false
+            self.startButton.isSelected = false
             self.handleButtonStates()
             self.stopActivityIndicator()
             
             guard var intermediateVideoUrls = videoUrls else {
-                //                self.cameraManager.resumeSession(completion: {
-                //                    DispatchQueue.main.async {
-                //                        self.updateUIForCameraMode(mode: self.cameraManager.cameraOutputMode)
-                //                    }
-                //                })
+                                self.cameraManager.resumeSession(completion: {
+                                    DispatchQueue.main.async {
+                                        self.updateUIForCameraMode(mode: self.cameraManager.cameraOutputMode)
+                                    }
+                                })
                 return
             }
             
@@ -472,7 +508,7 @@ extension OneCameraViewController: CameraMangerRecordingDelegate, CameraPhotoCap
                 if index < intermediateVideoUrls.count {
                     intermediateVideoUrls.remove(at: index)
                     images.remove(at: index)
-                    //                    self.cameraManager.deleteVideoAtIndex(index: index)
+                                        self.cameraManager.deleteVideoAtIndex(index: index)
                 }
             }
             

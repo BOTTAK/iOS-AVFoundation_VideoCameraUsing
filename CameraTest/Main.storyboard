@@ -332,7 +332,7 @@
                                 </subviews>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </view>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Lqb-Gw-R0I">
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Lqb-Gw-R0I">
                                 <rect key="frame" x="20" y="35" width="11" height="22"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -342,14 +342,14 @@
                                     <action selector="flashButtonEnabled:" destination="9Vj-sY-0cq" eventType="touchUpInside" id="8tP-pz-g62"/>
                                 </connections>
                             </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="00:00:00" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cri-NY-9aQ">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="00:00:00" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cri-NY-9aQ">
                                 <rect key="frame" x="148" y="36" width="72" height="21"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="JAd-dY-nbr">
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="JAd-dY-nbr">
                                 <rect key="frame" x="330" y="35" width="11" height="22"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -365,22 +365,42 @@
                     </view>
                     <connections>
                         <outlet property="audioOneLabel" destination="anb-ic-7Zz" id="mHl-26-6BO"/>
+                        <outlet property="audioTwoButton" destination="zDv-SU-Cra" id="cWH-82-DuJ"/>
                         <outlet property="audioTwoLabel" destination="Uwl-qp-OcR" id="Lhx-aj-Sla"/>
+                        <outlet property="auidoOneButton" destination="dmg-et-GWS" id="Bqc-7u-Pru"/>
                         <outlet property="cameraView" destination="cwu-Hm-JIj" id="lJI-ao-uqh"/>
+                        <outlet property="editorButton" destination="GmF-co-bWG" id="7Gn-Iu-rQO"/>
                         <outlet property="editorLabel" destination="nSQ-Yh-hNV" id="Njj-cN-wgg"/>
+                        <outlet property="effectOneButton" destination="9zd-gt-JG6" id="LV8-XT-jhA"/>
                         <outlet property="effectOneLabel" destination="SWX-c3-F8b" id="osD-rX-ly9"/>
+                        <outlet property="effectTwoButton" destination="Nd8-pa-ZQu" id="Atd-2l-1FN"/>
                         <outlet property="effectTwoLabel" destination="cb0-1e-fIr" id="mAP-U0-4W3"/>
+                        <outlet property="flashButtonEnabled" destination="Lqb-Gw-R0I" id="GiW-M9-WjP"/>
                         <outlet property="galeryLabel" destination="if9-IO-RH9" id="DLj-Je-UJg"/>
+                        <outlet property="galleryButton" destination="hcE-6M-jSr" id="59C-dS-9dl"/>
+                        <outlet property="lockOrientationButton" destination="JAd-dY-nbr" id="eG8-n3-KFC"/>
+                        <outlet property="microphoneButton" destination="YMP-ft-P6N" id="ZPO-fp-1rw"/>
                         <outlet property="microphoneLabel" destination="HTA-M0-gpa" id="5nc-cr-gDa"/>
                         <outlet property="negativOneLabel" destination="MU2-zu-8XJ" id="i8x-jy-hSO"/>
                         <outlet property="negativTwoLabel" destination="q0I-oE-PTr" id="eKK-23-hpW"/>
+                        <outlet property="negativeTwoButton" destination="qeT-VM-CB4" id="r3Z-iB-cpL"/>
+                        <outlet property="negaviteOneButton" destination="X4a-hv-ZaC" id="x2X-aR-KeP"/>
+                        <outlet property="orientationButtob" destination="eKf-dx-wPQ" id="7sX-4X-GYz"/>
+                        <outlet property="orientationButton" destination="xCQ-AO-kxz" id="idh-Ex-sWQ"/>
+                        <outlet property="photoCameraButton" destination="Jbh-JK-c4K" id="QxM-xN-ZrQ"/>
                         <outlet property="photoCameraLabel" destination="2in-2W-ptD" id="b9W-OJ-kqF"/>
+                        <outlet property="proModeButton" destination="8cr-ha-byH" id="TBo-vE-VGV"/>
                         <outlet property="proModeLabel" destination="SYF-UM-tMW" id="WA1-VI-ab2"/>
+                        <outlet property="rotateButton" destination="eKf-dx-wPQ" id="mG1-Tb-sQq"/>
                         <outlet property="rotateLabel" destination="jyE-24-WsR" id="8zL-eP-CeR"/>
                         <outlet property="settingsLabel" destination="EGL-GY-oC4" id="nrW-XN-CZm"/>
+                        <outlet property="startButton" destination="QTI-cW-cEu" id="ICm-pd-MZ1"/>
+                        <outlet property="stopButton" destination="wn0-Ud-8vU" id="sMc-yu-PId"/>
                         <outlet property="stopLabel" destination="Cgx-AQ-wrd" id="VQx-Xn-HQJ"/>
                         <outlet property="timerLabel" destination="cri-NY-9aQ" id="JJr-CL-1pF"/>
+                        <outlet property="videoOneButton" destination="0oo-Ql-BLd" id="P8A-BQ-DRK"/>
                         <outlet property="videoOneLabel" destination="zZN-yU-oLn" id="rvE-Jw-2Wh"/>
+                        <outlet property="videoTwoButton" destination="0K3-Qm-fco" id="qAU-gH-XlU"/>
                         <outlet property="videoTwoLabel" destination="msU-X2-BT3" id="LuS-r6-H6G"/>
                     </connections>
                 </viewController>
@@ -833,8 +853,8 @@
         <image name="Negativ" width="31" height="31"/>
         <image name="Photo" width="13.5" height="13.5"/>
         <image name="ProMode" width="13.5" height="13.5"/>
-        <image name="Rotate" width="13.5" height="13.5"/>
-        <image name="Settings" width="14" height="14"/>
+        <image name="Rotate" width="15.5" height="13.5"/>
+        <image name="Settings" width="13.5" height="13.5"/>
         <image name="Start" width="37.5" height="32.5"/>
         <image name="Stop" width="14.5" height="14.5"/>
         <image name="Vector" width="10.5" height="11.5"/>
