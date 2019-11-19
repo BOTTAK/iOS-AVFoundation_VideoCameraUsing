@@ -2,8 +2,8 @@
 //  ListViewController.swift
 //  VideoJournal
 //
-//  Created by Sumedh Ravi on 01/08/18.
-//  Copyright © 2018 Sumedh Ravi. All rights reserved.
+//  Created by Пенькевич Василий on 11/7/19.
+//  Copyright © 2019 Пенькевич Василий. All rights reserved.
 //
 
 import UIKit
