@@ -10,6 +10,8 @@ import UIKit
 import AVFoundation
 
 class CameraViewController: UIViewController {
+    
+    //MARK: - Outlets
 
     @IBOutlet weak var videoCaptureView: UIView!
     @IBOutlet weak var startButton: UIButton!
@@ -20,12 +22,16 @@ class CameraViewController: UIViewController {
     @IBOutlet weak var cameraModeControl: UISegmentedControl!
     @IBOutlet weak var previewImageView: UIImageView!
     
+    
+    //MARK: - Variables
     let cameraManager = CameraManager.sharedInstance
     
     var galleryView: GalleryView?
     private var activityIndicator: UIActivityIndicatorView?
     private var capturedImage: UIImage?
     
+    
+    //MARK: - Lifecycle
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -98,6 +104,8 @@ class CameraViewController: UIViewController {
         }
     }
     
+    
+    // MARK: - Function
     @IBAction func startRecord(_ sender: Any) {
         if cameraManager.cameraOutputMode == .video {
             if !startButton.isSelected {
@@ -336,7 +344,7 @@ extension CameraViewController: CameraMangerRecordingDelegate, CameraPhotoCaptur
                 if index < intermediateVideoUrls.count {
                     intermediateVideoUrls.remove(at: index)
                     images.remove(at: index)
-//                    self.cameraManager.deleteVideoAtIndex(index: index)
+                    self.cameraManager.deleteVideoAtIndex(index: index)
                 }
             }
             

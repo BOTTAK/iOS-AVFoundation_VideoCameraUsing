@@ -1194,10 +1194,10 @@ extension OrientationHandling {
     func customOrientation() {
         
         let deviceOrientation = UIDevice.current.orientation
-
+        
         if deviceOrientation == UIDeviceOrientation.portraitUpsideDown {
             previewLayer?.connection!.videoOrientation = AVCaptureVideoOrientation.portraitUpsideDown
-            }
+        }
         else if deviceOrientation == UIDeviceOrientation.portraitUpsideDown {
             previewLayer?.connection!.videoOrientation = AVCaptureVideoOrientation.landscapeLeft
             previewLayer?.connection!.videoOrientation = AVCaptureVideoOrientation.landscapeRight
@@ -1209,7 +1209,7 @@ extension OrientationHandling {
             previewLayer?.connection?.videoOrientation = AVCaptureVideoOrientation.portraitUpsideDown
         }
         
-        }
+    }
     
     
     func currentCaptureVideoOrientation() -> AVCaptureVideoOrientation {

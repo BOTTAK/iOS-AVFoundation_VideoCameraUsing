@@ -82,6 +82,8 @@ class OneCameraViewController: UIViewController {
     
     @IBOutlet weak var videoTwoButton: UIButton!
     
+    @IBOutlet weak var cameraMode: UISegmentedControl!
+    
     
     
     //MARK: Top Bar Panel Labels
@@ -98,6 +100,7 @@ class OneCameraViewController: UIViewController {
     
     //MARK: Variables
     let cameraManager = CameraManager.sharedInstance
+   
     var galleryView: GalleryView?
     private var activitiIndicator: UIActivityIndicatorView?
     private var captureImage: UIImage?
@@ -108,91 +111,109 @@ class OneCameraViewController: UIViewController {
     //MARK: Function
     @IBAction func flashButtonEnabled(_ sender: Any) {
         flashButtonEnabled.imageView?.contentMode = .scaleAspectFill
-        flashButtonEnabled.imageEdgeInsets = UIEdgeInsets(top: 19, left: 19, bottom: 19, right: 19)
+//        flashButtonEnabled.imageEdgeInsets = UIEdgeInsets(top: 10, left: 10, bottom: 10, right: 10)
         flashButtonEnabled.setImage((UIImage(named: "Vector")), for: .normal)
+        setFlashImage(state: cameraManager.changeIlluminationMode())
     }
     
     @IBAction func lockRorationButton(_ sender: Any) {
         lockOrientationButton.imageView?.contentMode = .scaleAspectFill
-        lockOrientationButton.imageEdgeInsets = UIEdgeInsets(top: 19, left: 19, bottom: 19, right: 19)
         lockOrientationButton.setImage(UIImage(named: "Locked"), for: .normal)
+        let vc: ImageViewController? = self.storyboard?.instantiateViewController(withIdentifier: "ImageViewController") as? ImageViewController
+        if let validVC: ImageViewController = vc,
+            let capturedImage = captureImage {
+            validVC.image = captureImage
+            self.navigationController?.pushViewController(validVC, animated: true)
+        }
     }
     
     @IBAction func galeryButton(_ sender: Any) {
         galleryButton.imageView?.contentMode = .scaleAspectFill
-        galleryButton.imageEdgeInsets = UIEdgeInsets(top: 25, left: 25, bottom: 25, right: 25)
+//        galleryButton.imageEdgeInsets = UIEdgeInsets(top: 13, left: 13, bottom: 13, right: 13)
         galleryButton.setImage(UIImage(named: "Gallery"), for: .normal)
     }
     
     @IBAction func editorButton(_ sender: Any) {
         editorButton.imageView?.contentMode = .scaleAspectFill
-        editorButton.imageEdgeInsets = UIEdgeInsets(top: 25, left: 25, bottom: 25, right: 25)
+        editorButton.imageEdgeInsets = UIEdgeInsets(top: 13, left: 13, bottom: 13, right: 13)
         editorButton.setImage(UIImage(named: "Editor"), for: .normal)
     }
     
     @IBAction func startButton(_ sender: Any) {
         startButton.imageView?.contentMode = .scaleAspectFill
-        startButton.imageEdgeInsets = UIEdgeInsets(top: 65, left: 65, bottom: 65, right: 65)
         startButton.setImage(UIImage(named: "Start"), for: .normal)
+         if cameraManager.cameraOutputMode == .video {
+                   if !startButton.isSelected {
+                       cameraManager.startRecording()
+                   } else {
+                       cameraManager.pauseRecording()
+                   }
+               } else {
+                   print("need photo mode")
+               }
+        
     }
+
     
     @IBAction func stopButton(_ sender: Any) {
         stopButton.imageView?.contentMode = .scaleAspectFill
-        stopButton.imageEdgeInsets = UIEdgeInsets(top: 25, left: 25, bottom: 25, right: 25)
+//        stopButton.imageEdgeInsets = UIEdgeInsets(top: 13, left: 13, bottom: 13, right: 13)
         stopButton.setImage(UIImage(named: "Stop"), for: .normal)
+        cameraManager.stopRecording(discardVideo: true)
+        startActivityIndicator()
     }
     
     @IBAction func orientationButton(_ sender: Any) {
         orientationButton.imageView?.contentMode = .scaleAspectFill
-        orientationButton.imageEdgeInsets = UIEdgeInsets(top: 19, left: 19, bottom: 19, right: 19)
+//        orientationButton.imageEdgeInsets = UIEdgeInsets(top: 10, left: 10, bottom: 10, right: 10)
         orientationButton.setImage(UIImage(named: "Rotate"), for: .normal)
     }
     
     @IBAction func videoOneButton(_ sender: Any) {
         videoOneButton.imageView?.contentMode = .scaleAspectFill
-        videoOneButton.imageEdgeInsets = UIEdgeInsets(top: 60, left: 60, bottom: 60, right: 60)
+//        videoOneButton.imageEdgeInsets = UIEdgeInsets(top:30, left: 30, bottom: 30, right: 30)
         videoOneButton.setImage(UIImage(named: "Video"), for: .normal)
     }
     
     @IBAction func audioOneButton(_ sender: Any) {
         auidoOneButton.imageView?.contentMode = .scaleAspectFill
-        auidoOneButton.imageEdgeInsets = UIEdgeInsets(top: 60, left: 60, bottom: 60, right: 60)
+//        auidoOneButton.imageEdgeInsets = UIEdgeInsets(top: 30, left: 30, bottom: 30, right: 30)
         auidoOneButton.setImage(UIImage(named: "Audio"), for: .normal)
     }
     
     @IBAction func effectOneButton(_ sender: Any) {
         effectOneButton.imageView?.contentMode = .scaleAspectFill
-        effectOneButton.imageEdgeInsets = UIEdgeInsets(top: 60, left: 60, bottom: 60, right: 60)
+//        effectOneButton.imageEdgeInsets = UIEdgeInsets(top: 30, left: 30, bottom: 30, right: 30)
         effectOneButton.setImage(UIImage(named: "Effect"), for: .normal)
     }
     
     @IBAction func negativOneButton(_ sender: Any) {
         negaviteOneButton.imageView?.contentMode = .scaleAspectFill
-        negaviteOneButton.imageEdgeInsets = UIEdgeInsets(top: 60, left: 60, bottom: 60, right: 60)
+//        negaviteOneButton.imageEdgeInsets = UIEdgeInsets(top: 30, left: 30, bottom: 30, right: 30)
         negaviteOneButton.setImage(UIImage(named: "Negativ"), for: .normal)
     }
     
     @IBAction func videoTwoButton(_ sender: Any) {
         videoTwoButton.imageView?.contentMode = .scaleAspectFill
-        videoTwoButton.imageEdgeInsets = UIEdgeInsets(top: 60, left: 60, bottom: 60, right: 60)
+//        videoTwoButton.imageEdgeInsets = UIEdgeInsets(top: 30, left: 30, bottom: 30, right: 30)
         videoTwoButton.setImage(UIImage(named: "Video"), for: .normal)
     }
     
     @IBAction func audioTwoButton(_ sender: Any) {
         audioTwoButton.imageView?.contentMode = .scaleAspectFill
-        audioTwoButton.imageEdgeInsets = UIEdgeInsets(top: 60, left: 60, bottom: 60, right: 60)
+//        audioTwoButton.imageEdgeInsets = UIEdgeInsets(top: 30, left: 30, bottom: 30, right: 30)
         audioTwoButton.setImage(UIImage(named: "Audio"), for: .normal)
     }
     
     @IBAction func effectTwoButton(_ sender: Any) {
         effectTwoButton.imageView?.contentMode = .scaleAspectFill
-        effectTwoButton.imageEdgeInsets = UIEdgeInsets(top: 60, left: 60, bottom: 60, right: 60)
+//        effectTwoButton.imageEdgeInsets = UIEdgeInsets(top: 30, left: 30, bottom: 30, right: 30)
         effectTwoButton.setImage(UIImage(named: "Effect"), for: .normal)
     }
     
     @IBAction func negativTwoButton(_ sender: Any) {
         negativeTwoButton.imageView?.contentMode = .scaleAspectFill
-        negativeTwoButton.imageEdgeInsets = UIEdgeInsets(top: 60, left: 60, bottom: 60, right: 60)
+//        negativeTwoButton.imageEdgeInsets = UIEdgeInsets(top: 30, left: 30, bottom: 30, right: 30)
         negativeTwoButton.setImage(UIImage(named: "Negativ"), for: .normal)
     }
     
@@ -200,31 +221,31 @@ class OneCameraViewController: UIViewController {
     //MARK: TopBar Panel Function
     @IBAction func rotateButton(_ sender: Any) {
         rotateButton.imageView?.contentMode = .scaleAspectFill
-        rotateButton.imageEdgeInsets = UIEdgeInsets(top: 27, left: 27, bottom: 27, right: 27)
+//        rotateButton.imageEdgeInsets = UIEdgeInsets(top: 14, left: 14, bottom: 14, right: 14)
         rotateButton.setImage(UIImage(named: "RotateMode"), for: .normal)
     }
     
     @IBAction func proModeButton(_ sender: Any) {
         proModeButton.imageView?.contentMode = .scaleAspectFill
-        proModeButton.imageEdgeInsets = UIEdgeInsets(top: 27, left: 27, bottom: 27, right: 27)
+//        proModeButton.imageEdgeInsets = UIEdgeInsets(top: 14, left: 14, bottom: 14, right: 14)
         proModeButton.setImage(UIImage(named: "ProMode"), for: .normal)
     }
     
     @IBAction func photoCameraButton(_ sender: Any) {
         photoCameraButton.imageView?.contentMode = .scaleAspectFill
-        photoCameraButton.imageEdgeInsets = UIEdgeInsets(top: 27, left: 27, bottom: 27, right: 27)
+//        photoCameraButton.imageEdgeInsets = UIEdgeInsets(top: 14, left: 14, bottom: 14, right: 14)
         photoCameraButton.setImage(UIImage(named: "Photo"), for: .normal)
     }
     
     @IBAction func microphoneButton(_ sender: Any) {
         microphoneButton.imageView?.contentMode = .scaleAspectFill
-        microphoneButton.imageEdgeInsets = UIEdgeInsets(top: 27, left: 27, bottom: 27, right: 27)
+//        microphoneButton.imageEdgeInsets = UIEdgeInsets(top: 14, left: 14, bottom: 14, right: 14)
         microphoneButton.setImage(UIImage(named: "Microphone"), for: .normal)
     }
     
     @IBAction func settingsButton(_ sender: Any) {
         settingButton.imageView?.contentMode = .scaleAspectFill
-        settingButton.imageEdgeInsets = UIEdgeInsets(top: 27, left: 27, bottom: 27, right: 27)
+//        settingButton.imageEdgeInsets = UIEdgeInsets(top: 14, left: 14, bottom: 14, right: 14)
         settingButton.setImage(UIImage(named: "Settings"), for: .normal)
     }
     
@@ -244,9 +265,9 @@ class OneCameraViewController: UIViewController {
         } else {
             flashButtonEnabled.isEnabled = false
         }
-//        orientationButtob.isEnabled = cameraManager.hasFrontCamera
-//        orientationButtob.isHidden = !cameraManager.canChangeCameraPosition
-//        cameraModeControl.selectedSegmentIndex = cameraManager.cameraOutputMode.rawValue
+        orientationButtob.isEnabled = cameraManager.hasFrontCamera
+        orientationButtob.isHidden = !cameraManager.canChangeCameraPosition
+        cameraMode.selectedSegmentIndex = cameraManager.cameraOutputMode.rawValue
     }
     
     func cameraAccessDenied(type: PermissionsManager.PermissionType? = nil) {
@@ -332,6 +353,8 @@ class OneCameraViewController: UIViewController {
         present(playerVC, animated: true)
     }
     
+
+    
     func startActivityIndicator() {
         guard let spinner = activitiIndicator else {
             activitiIndicator = UIActivityIndicatorView(style: UIActivityIndicatorView.Style.whiteLarge)
@@ -362,6 +385,7 @@ class OneCameraViewController: UIViewController {
     //MARK: Lifecycle
     override func viewDidLoad() {
         super.viewDidLoad()
+        effectOneButton.imageEdgeInsets = UIEdgeInsets(top: 30, left: 30, bottom: 30, right: 30)
         cameraManager.writeFilesToPhoneLibrary = true
         if cameraManager.isCameraReady {
             addVideoPreviewView(mode: nil)
