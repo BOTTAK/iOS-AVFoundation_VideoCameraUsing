@@ -360,6 +360,20 @@ class CameraManager: NSObject {
     
     //MARK: Notification Handling
     
+    func rotateLandscape() {
+        self.previewLayer?.frame = CGRect(x: 0.0, y: 120, width: 400, height: 400)
+        self.previewLayer?.frame.size.width = UIScreen.main.bounds.width
+        
+        self.previewLayer?.connection!.videoOrientation = AVCaptureVideoOrientation.landscapeLeft
+    }
+    
+    func rotatePortrait() {
+        self.previewLayer?.frame = CGRect(x: 0.0, y: 120, width: 400, height: 400)
+        self.previewLayer?.frame.size.width = UIScreen.main.bounds.width
+        
+        self.previewLayer?.connection?.videoOrientation = AVCaptureVideoOrientation.portrait
+    }
+    
     private func setupObservers() {
         NotificationCenter.default.addObserver(self, selector: #selector(sessionEncounteredRuntimeError), name: NSNotification.Name.AVCaptureSessionRuntimeError, object: session)
         NotificationCenter.default.addObserver(self, selector: #selector(sessionWasInterrupted), name: NSNotification.Name.AVCaptureSessionWasInterrupted, object: session)
@@ -1039,42 +1053,42 @@ extension OrientationHandling {
     //MARK: Handling Device Orientation
     
     @objc private func handleOrientation() {
-        let currentConnection = getCurrentOutput()?.connection(with: AVMediaType.video)
-        
-        if let validPreviewLayer = previewLayer {
-            if !shouldKeepViewAtOrientationChanges {
-                if let validPreviewLayerConnection = validPreviewLayer.connection {
-                    if validPreviewLayerConnection.isVideoOrientationSupported {
-                        validPreviewLayerConnection.videoOrientation = currentPreviewVideoOrientation()
-                    }
-                }
-            }
-            
-            if let validOutputLayerConnection = currentConnection, validOutputLayerConnection.isVideoOrientationSupported {
-                
-                switch cameraOutputMode {
-                case .stillImage:
-                    validOutputLayerConnection.videoOrientation = currentCaptureVideoOrientation()
-                    
-                case .video:
-                    if isRecording || isRecordingSessionInProgress {
-                        validOutputLayerConnection.videoOrientation = lockedRecordingOrientation
-                    } else {
-                        lockedRecordingOrientation = currentCaptureVideoOrientation()
-                        validOutputLayerConnection.videoOrientation = lockedRecordingOrientation
-                    }
-                }
-            }
-            
-            if !shouldKeepViewAtOrientationChanges && cameraIsObservingDeviceOrientation {
-                DispatchQueue.main.async(execute: { () -> Void in
-                    if let validEmbeddingView = self.embeddingView {
-                        validPreviewLayer.frame = validEmbeddingView.bounds
-                        validPreviewLayer.videoGravity = AVLayerVideoGravity.resizeAspectFill
-                    }
-                })
-            }
-        }
+//        let currentConnection = getCurrentOutput()?.connection(with: AVMediaType.video)
+//
+//        if let validPreviewLayer = previewLayer {
+//            if !shouldKeepViewAtOrientationChanges {
+//                if let validPreviewLayerConnection = validPreviewLayer.connection {
+//                    if validPreviewLayerConnection.isVideoOrientationSupported {
+//                        validPreviewLayerConnection.videoOrientation = currentPreviewVideoOrientation()
+//                    }
+//                }
+//            }
+//
+//            if let validOutputLayerConnection = currentConnection, validOutputLayerConnection.isVideoOrientationSupported {
+//
+//                switch cameraOutputMode {
+//                case .stillImage:
+//                    validOutputLayerConnection.videoOrientation = currentCaptureVideoOrientation()
+//
+//                case .video:
+//                    if isRecording || isRecordingSessionInProgress {
+//                        validOutputLayerConnection.videoOrientation = lockedRecordingOrientation
+//                    } else {
+//                        lockedRecordingOrientation = currentCaptureVideoOrientation()
+//                        validOutputLayerConnection.videoOrientation = lockedRecordingOrientation
+//                    }
+//                }
+//            }
+//
+//            if !shouldKeepViewAtOrientationChanges && cameraIsObservingDeviceOrientation {
+//                DispatchQueue.main.async(execute: { () -> Void in
+//                    if let validEmbeddingView = self.embeddingView {
+//                        validPreviewLayer.frame = validEmbeddingView.bounds
+//                        validPreviewLayer.videoGravity = AVLayerVideoGravity.resizeAspectFill
+//                    }
+//                })
+//            }
+//        }
     }
     
     func startFollowingDeviceOrientation() {

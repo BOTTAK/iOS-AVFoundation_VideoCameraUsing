@@ -8,6 +8,7 @@
 
 import UIKit
 import AVFoundation
+import MediaPlayer
 
 class CameraViewController: UIViewController {
     
@@ -21,6 +22,7 @@ class CameraViewController: UIViewController {
     @IBOutlet weak var timeLabel: UILabel!
     @IBOutlet weak var cameraModeControl: UISegmentedControl!
     @IBOutlet weak var previewImageView: UIImageView!
+    @IBOutlet weak var mergeSliderView: UIView!
     
     
     //MARK: - Variables
@@ -29,6 +31,14 @@ class CameraViewController: UIViewController {
     var galleryView: GalleryView?
     private var activityIndicator: UIActivityIndicatorView?
     private var capturedImage: UIImage?
+    var audioTotalsec = 0.0
+    var mergeSlidervw: OptiRangeSliderView!
+    var audioPicker: AVAsset!
+    var mergesliderminimumValue : Double = 0.0
+    var mergeslidermaximumValue : Double = 0.0
+    var pickedFileName : String = ""
+    var slctAudioUrl: URL?
+    
     
     
     //MARK: - Lifecycle
@@ -149,6 +159,21 @@ class CameraViewController: UIViewController {
     }
     
     
+    @IBAction func settingButton(_ sender: UIButton) {
+      let storyboard = UIStoryboard(name: "Main", bundle: nil)
+      let controller = storyboard.instantiateViewController(withIdentifier: "SettingsViewController") as! SettingsViewController
+        navigationController?.pushViewController(controller, animated: true)
+    }
+    
+    
+    @IBAction func rotateLanscape(_ sender: UIButton) {
+        cameraManager.rotateLandscape()
+    }
+    
+    @IBAction func rotatePortrait(_ sender: UIButton) {
+        cameraManager.rotatePortrait()
+    }
+    
     private func setupUI() {
         videoCaptureView?.contentMode = .scaleToFill
         startButton.isSelected = false
@@ -163,6 +188,30 @@ class CameraViewController: UIViewController {
                 self.setFlashImage(state: self.cameraManager.illuminationState)
             }
         })
+    }
+    
+    
+    private func setupAudioropSlidervw() {
+        if self.mergeSlidervw == nil {
+            self.mergeSlidervw = OptiRangeSliderView(frame: CGRect(x: 20, y: -15 ,width: self.mergeSliderView.frame.size.width - 40,height: self.mergeSliderView.frame.size.height))
+            self.mergeSlidervw.delegate = self as? OptiRangeSliderViewDelegate
+            self.mergeSlidervw.tag = 2
+            self.mergeSlidervw.thumbTintColor = UIColor.lightGray
+            self.mergeSlidervw.trackHighlightTintColor = UIColor.darkGray
+            self.mergeSlidervw.lowerLabel?.textColor = UIColor.lightGray
+            self.mergeSlidervw.upperLabel?.textColor = UIColor.lightGray
+            self.mergeSlidervw.trackTintColor = UIColor.lightGray
+            self.mergeSlidervw.thumbBorderColor = UIColor.clear
+            self.mergeSlidervw.lowerValue = 0.0
+            self.mergeSlidervw.upperValue = audioTotalsec
+            self.mergeSlidervw.stepValue = 5
+            self.mergeSlidervw.gapBetweenThumbs = 5
+            self.mergeSlidervw.thumbLabelStyle = .FOLLOW
+            self.mergeSlidervw.lowerDisplayStringFormat = "%.0f"
+            self.mergeSlidervw.upperDisplayStringFormat = "%.0f"
+            self.mergeSlidervw.sizeToFit()
+            self.mergeSliderView.addSubview(self.mergeSlidervw)
+        }
     }
     
     private func positionCameraPreview() {
@@ -408,5 +457,92 @@ extension CameraViewController: CameraMangerRecordingDelegate, CameraPhotoCaptur
                 self.previewImageView.image = image
             }
         }
+    }
+    
+    
+//    @IBAction func selectAudioClicked(_ sender: Any) {
+//        let documentPicker: UIDocumentPickerViewController = UIDocumentPickerViewController(documentTypes: ["public.audio","public.mp3","public.mpeg-4-audio","public.aifc-audio","public.aiff-audio"], in: UIDocumentPickerMode.import)
+//        documentPicker.delegate = self as! UIDocumentPickerDelegate
+//        documentPicker.modalPresentationStyle = UIModalPresentationStyle.fullScreen
+//        self.present(documentPicker, animated: true, completion: nil)
+//    }
+//
+//    @IBAction func btnAudioVideoMergeClose_Action(_ sender: UIButton) {
+//        let saveBarBtnItm = UIBarButtonItem(title: "", style: .done, target: self, action: nil)
+//        self.navigationItem.rightBarButtonItem  = saveBarBtnItm
+//        self.merge_Musicbacvw.isHidden = true
+//        UIView.animate(withDuration: 0.5, delay: 0, options: [.curveLinear],
+//                       animations: {
+//                        self.vw_function.frame = CGRect(x: self.menu_Vw.frame.origin.x, y: (self.menu_Vw.frame.origin.y + self.menu_Vw.bounds.height) + 360 , width: self.menu_Vw.bounds.width, height: self.menu_Vw.bounds.height)
+//                        self.vw_function.layoutIfNeeded()
+//        }, completion: nil)
+//    }
+//    @IBAction func btn_AudioVideoMergeSave_Action(_ sender: UIButton) {
+//        if let audiourl = self.slctAudioUrl {
+//            UIView.animate(withDuration: 0.5, delay: 0, options: [.curveLinear],animations: {
+//                self.vw_function.frame = CGRect(x: self.menu_Vw.frame.origin.x, y: (self.menu_Vw.frame.origin.y + self.menu_Vw.bounds.height) + 360 , width: self.menu_Vw.bounds.width, height: self.menu_Vw.bounds.height)
+//                self.vw_function.layoutIfNeeded()
+//            }, completion: nil)
+//            OptiVideoEditor().trimAudio(sourceURL: audiourl, startTime: mergesliderminimumValue, stopTime: mergeslidermaximumValue, success: { (audioUrl) in
+//                let asset = AVAsset(url: audioUrl)
+//                let audiosec = CMTimeGetSeconds(asset.duration)
+//                if self.videoTotalsec >= audiosec {
+//                    DispatchQueue.main.async {
+//                        self.progressvw_back.isHidden = false
+//                        self.progress_Vw.progress = 0.1
+//                        self.setTimer()
+//                        self.merge_Musicbacvw.isHidden = true
+//                        self.mergeView.isHidden = true
+//                        if  let videourl = self.slctVideoUrl  {
+//                            OptiVideoEditor().mergeVideoWithAudio(videoUrl: videourl, audioUrl: audioUrl, success: { (url) in
+//                                DispatchQueue.main.async {
+//                                    let saveBarBtnItm = UIBarButtonItem(title: "Save", style: .done, target: self, action: #selector(self.saveActionforEditedVideo))
+//                                    self.navigationItem.rightBarButtonItem  = saveBarBtnItm
+//                                    self.progress_Vw.progress = 1.0
+//                                    self.slctVideoUrl = url
+//                                    self.addVideoPlayer(videoUrl: url, to: self.video_vw)
+//                                    self.progressvw_back.isHidden = true
+//                                }
+//                            }) { (error) in
+//                                DispatchQueue.main.async {
+//                                    OptiToast.showNegativeMessage(message: error ?? "")
+//                                    self.progressvw_back.isHidden = true
+//                                }
+//                            }
+//                        }
+//                    }
+//                }else{
+//                    DispatchQueue.main.async {
+//                        OptiToast.showNegativeMessage(message: OptiConstant().cropaudioduration)
+//                        self.progressvw_back.isHidden = true
+//                    }
+//                }
+//
+//            }) { (error) in
+//                DispatchQueue.main.async {
+//                    OptiToast.showNegativeMessage(message: error ?? "")
+//                    self.progressvw_back.isHidden = true
+//                }
+//            }
+//        }
+//    }
+//
+}
+
+extension CameraViewController: MPMediaPickerControllerDelegate {
+    func mediaPicker(_ mediaPicker: MPMediaPickerController, didPickMediaItems mediaItemCollection: MPMediaItemCollection) {
+        dismiss(animated: true) {
+            let selectedSongs = mediaItemCollection.items
+            guard let song = selectedSongs.first else { return }
+            
+            let url = song.value(forProperty: MPMediaItemPropertyAssetURL) as? URL
+            self.audioPicker = (url == nil) ? nil : AVAsset(url: url!)
+            let message = (url == nil) ? "Audio Not Loaded" : "Audio Loaded"
+            OptiToast.showNegativeMessage(message: message)
+        }
+    }
+    
+    func mediaPickerDidCancel(_ mediaPicker: MPMediaPickerController) {
+        dismiss(animated: true, completion: nil)
     }
 }

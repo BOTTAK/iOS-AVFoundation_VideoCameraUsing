@@ -31,6 +31,10 @@
 		1192C51D2373F9B900072DD1 /* PhotoLibraryManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1192C51B2373F9B900072DD1 /* PhotoLibraryManager.swift */; };
 		1192C51E2373F9B900072DD1 /* UserDefaultsHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1192C51C2373F9B900072DD1 /* UserDefaultsHandler.swift */; };
 		1192C52223756DF400072DD1 /* OneCameraViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1192C52123756DF400072DD1 /* OneCameraViewController.swift */; };
+		FA0F9A2A238C302C0063A793 /* RangeSliderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA0F9A29238C302C0063A793 /* RangeSliderView.swift */; };
+		FA0F9A2C238C307D0063A793 /* SliderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA0F9A2B238C307D0063A793 /* SliderView.swift */; };
+		FA0F9A2E238C30D80063A793 /* Constant.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA0F9A2D238C30D80063A793 /* Constant.swift */; };
+		FA0F9A30238C3B4F0063A793 /* Toast.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA0F9A2F238C3B4F0063A793 /* Toast.swift */; };
 		FA4E86AA2383C43700223270 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FA4E86A92383C43700223270 /* Assets.xcassets */; };
 /* End PBXBuildFile section */
 
@@ -61,6 +65,10 @@
 		1192C51B2373F9B900072DD1 /* PhotoLibraryManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PhotoLibraryManager.swift; sourceTree = "<group>"; };
 		1192C51C2373F9B900072DD1 /* UserDefaultsHandler.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserDefaultsHandler.swift; sourceTree = "<group>"; };
 		1192C52123756DF400072DD1 /* OneCameraViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OneCameraViewController.swift; sourceTree = "<group>"; };
+		FA0F9A29238C302C0063A793 /* RangeSliderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RangeSliderView.swift; sourceTree = "<group>"; };
+		FA0F9A2B238C307D0063A793 /* SliderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SliderView.swift; sourceTree = "<group>"; };
+		FA0F9A2D238C30D80063A793 /* Constant.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constant.swift; sourceTree = "<group>"; };
+		FA0F9A2F238C3B4F0063A793 /* Toast.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Toast.swift; sourceTree = "<group>"; };
 		FA4E86A92383C43700223270 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -176,6 +184,10 @@
 			children = (
 				1192C51B2373F9B900072DD1 /* PhotoLibraryManager.swift */,
 				1192C51C2373F9B900072DD1 /* UserDefaultsHandler.swift */,
+				FA0F9A29238C302C0063A793 /* RangeSliderView.swift */,
+				FA0F9A2B238C307D0063A793 /* SliderView.swift */,
+				FA0F9A2D238C30D80063A793 /* Constant.swift */,
+				FA0F9A2F238C3B4F0063A793 /* Toast.swift */,
 			);
 			path = "Helper Classes";
 			sourceTree = "<group>";
@@ -257,10 +269,13 @@
 				1192C4E12373F89B00072DD1 /* ViewController.swift in Sources */,
 				1192C4F82373F96A00072DD1 /* VideoMerger.swift in Sources */,
 				1192C5122373F97D00072DD1 /* GalleryView.swift in Sources */,
+				FA0F9A2A238C302C0063A793 /* RangeSliderView.swift in Sources */,
 				1192C51D2373F9B900072DD1 /* PhotoLibraryManager.swift in Sources */,
 				1192C5102373F97D00072DD1 /* CameraViewController.swift in Sources */,
+				FA0F9A2C238C307D0063A793 /* SliderView.swift in Sources */,
 				1192C5172373F9B000072DD1 /* CameraFileManager.swift in Sources */,
 				1192C4DD2373F89B00072DD1 /* AppDelegate.swift in Sources */,
+				FA0F9A2E238C30D80063A793 /* Constant.swift in Sources */,
 				1192C50C2373F97D00072DD1 /* ListViewController.swift in Sources */,
 				1192C5092373F97D00072DD1 /* SettingsTableViewCell.swift in Sources */,
 				1192C4DF2373F89B00072DD1 /* SceneDelegate.swift in Sources */,
@@ -271,6 +286,7 @@
 				1192C52223756DF400072DD1 /* OneCameraViewController.swift in Sources */,
 				1192C5182373F9B000072DD1 /* PermissionsManager.swift in Sources */,
 				1192C51E2373F9B900072DD1 /* UserDefaultsHandler.swift in Sources */,
+				FA0F9A30238C3B4F0063A793 /* Toast.swift in Sources */,
 				1192C5192373F9B000072DD1 /* CameraManager.swift in Sources */,
 				1192C50F2373F97D00072DD1 /* HomeViewController.swift in Sources */,
 			);
